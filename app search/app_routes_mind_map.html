@@ -1,0 +1,197 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>App Routes Mind Map</title>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <style>
+            .node circle {
+                fill: #fff;
+                stroke: steelblue;
+                stroke-width: 2px;
+            }
+            .node text {
+                font: 12px sans-serif;
+            }
+            .link {
+                fill: none;
+                stroke: #ccc;
+                stroke-width: 1.5px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            var data = {
+    "name": "Routes",
+    "children": [
+        {
+            "name": "",
+            "children": [
+                {
+                    "name": "route1",
+                    "children": [
+                        {
+                            "name": "route1"
+                        },
+                        {
+                            "name": "alt",
+                            "children": [
+                                {
+                                    "name": "route1_alt"
+                                },
+                                {
+                                    "name": "route1_alt"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "route1"
+                        }
+                    ]
+                },
+                {
+                    "name": "route2",
+                    "children": [
+                        {
+                            "name": "route2"
+                        },
+                        {
+                            "name": "alt",
+                            "children": [
+                                {
+                                    "name": "route2_alt"
+                                },
+                                {
+                                    "name": "route2_alt"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "route2"
+                        }
+                    ]
+                },
+                {
+                    "name": "route3",
+                    "children": [
+                        {
+                            "name": "route3"
+                        },
+                        {
+                            "name": "alt",
+                            "children": [
+                                {
+                                    "name": "route3_alt"
+                                },
+                                {
+                                    "name": "route3_alt"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "route3"
+                        }
+                    ]
+                },
+                {
+                    "name": "route4",
+                    "children": [
+                        {
+                            "name": "route4"
+                        },
+                        {
+                            "name": "alt",
+                            "children": [
+                                {
+                                    "name": "route4_alt"
+                                },
+                                {
+                                    "name": "route4_alt"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "route4"
+                        }
+                    ]
+                },
+                {
+                    "name": "route5",
+                    "children": [
+                        {
+                            "name": "route5"
+                        },
+                        {
+                            "name": "alt",
+                            "children": [
+                                {
+                                    "name": "route5_alt"
+                                },
+                                {
+                                    "name": "route5_alt"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "route5"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+};
+            var width = 800;
+            var height = 600;
+
+            var svg = d3.select("body").append("svg")
+                .attr("width", width)
+                .attr("height", height);
+
+            var g = svg.append("g").attr("transform", "translate(50,0)");
+
+            var tree = d3.tree()
+                .size([height, width - 100]);
+
+            var root = d3.hierarchy(data);
+
+            tree(root);
+
+            var link = g.selectAll(".link")
+                .data(root.descendants().slice(1))
+                .enter().append("path")
+                .attr("class", "link")
+                .attr("d", function(d) {
+                    return "M" + d.y + "," + d.x
+                        + "C" + (d.y + d.parent.y) / 2 + "," + d.x
+                        + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
+                        + " " + d.parent.y + "," + d.parent.x;
+                });
+
+            var node = g.selectAll(".node")
+                .data(root.descendants())
+                .enter().append("g")
+                .attr("class", "node")
+                .attr("transform", function(d) {
+                    return "translate(" + d.y + "," + d.x + ")";
+                });
+
+            node.append("circle")
+                .attr("r", 5);
+
+            node.append("text")
+                .attr("dy", ".31em")
+                .attr("x", function(d) {
+                    return d.children ? -8 : 8;
+                })
+                .style("text-anchor", function(d) {
+                    return d.children ? "end" : "start";
+                })
+                .text(function(d) {
+                    return d.data.name;
+                });
+        </script>
+    </body>
+    </html>
+    
