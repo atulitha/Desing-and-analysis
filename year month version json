@@ -1,0 +1,41 @@
+import json
+from datetime import datetime
+import random
+
+start_date = datetime(2022, 1, 1)
+end_date = datetime(2023, 12, 1)
+
+data = {"years": []}
+current_date = start_date
+current_year_data = None
+
+while current_date <= end_date:
+    year = current_date.year
+    month = current_date.strftime('%b').lower()
+
+    # If we are starting a new year or the year data does not yet exist
+    if not current_year_data or current_year_data["year"] != str(year):
+        current_year_data = {
+            "year": str(year),
+            "months": []
+        }
+        data["years"].append(current_year_data)
+
+    # Generate random number of versions for the month
+    num_versions = random.randint(1, 10)  # Let's say a month can have between 1 to 10 versions
+    versions = ["v" + str(i + 1) for i in range(num_versions)]
+
+    month_data = {
+        "month": month,
+        "versions": versions
+    }
+    current_year_data["months"].append(month_data)
+
+    # Increment the date by one month
+    if current_date.month == 12:
+        current_date = current_date.replace(year=current_date.year + 1, month=1)
+    else:
+        current_date = current_date.replace(month=current_date.month + 1)
+
+json_data = json.dumps(data, indent=2)
+print(json_data)
