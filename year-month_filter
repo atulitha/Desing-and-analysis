@@ -1,0 +1,71 @@
+import json
+from datetime import datetime
+
+def generate_year_data(year, current_year, current_month):
+    """
+    Generate yearly filter data for a given year.
+
+    Parameters:
+    year (int): The year for which to generate data.
+    current_year (int): The current year to exclude future months.
+    current_month (int): The current month to exclude future months.
+
+    Returns:
+    dict: Filter data for the specified year.
+    """
+    max_month = 12 if year != current_year else current_month
+    months = []
+    for month_num in range(1, max_month + 1):
+        month_name = datetime(year, month_num, 1).strftime('%B')
+        month_data = {
+            "month": month_name,
+            "versions": ["version 6"],
+        }
+        months.append(month_data)
+
+    return {
+        "year": str(year),
+        "months": months
+    }
+
+def generate_filters_for_5_years(use_current_date):
+    current_date = datetime.now()
+    current_year = current_date.year
+    current_month = current_date.month
+
+    if not use_current_date:
+        # Input the current date as 'YYYY-MM-DD'
+        current_date_input = input("Enter the current date (YYYY-MM-DD): ")
+        try:
+            current_date = datetime.strptime(current_date_input, '%Y-%m-%d')
+            current_year = current_date.year
+            current_month = current_date.month
+        except ValueError:
+            raise ValueError("Invalid date format. Please provide a date in the format 'YYYY-MM-DD'.")
+
+    # Calculate the last 5 years from the input date, excluding the current year
+    last_5_years = [current_year - i for i in range(0, 6)]
+
+    # Generate filters for each of the last 5 years
+    filters = []
+    for year in last_5_years:
+        year_data = generate_year_data(year, current_year, current_month)
+        filters.append(year_data)
+
+    return {
+        "years": filters
+    }
+
+# Determine whether to use the current date based on a condition
+use_current_date = False  # Set to True if you want to use current date
+
+try:
+    # Generate filters for the last 5 years (excluding the current year and future months) based on the condition
+    output_data = generate_filters_for_5_years(use_current_date)
+
+    # Convert the result dictionary to JSON and print it
+    json_output = json.dumps(output_data, indent=4)
+    print(json_output)
+
+except ValueError as e:
+    print(e)
