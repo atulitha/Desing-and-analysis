@@ -10,6 +10,8 @@ I hope this message finds you well. I am reaching out to seek your assistance wi
 
 As you may be aware, our team has been experiencing frequent environmental issues across our DEV, UAT, OAT, and Production stages during code deployment. These issues have not only been a significant source of frustration but have also led to conflicts within the team.
 
+One of the major concerns we're facing is the amount of time lost in troubleshooting minor Linux issues, largely due to our limited knowledge in this area. This lack of expertise is impacting our productivity and contributing to delays in our project timelines.
+
 In an effort to address these challenges, I previously followed the guidelines outlined on the Confluence page for setting up the DEV environment. This documentation has been shared with Sravanthi for reference. However, despite these efforts, we find ourselves in need of additional support to effectively manage and troubleshoot these environments.
 
 Given that DevOps and Linux are closely intertwined, I believe that Lathif could provide invaluable assistance in this regard. Our team, primarily composed of Python developers, has limited expertise in Linux, which is proving to be a hurdle in resolving these environment-related challenges.
