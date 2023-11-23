@@ -1,29 +1,20 @@
+Subject: New Requirements and Request for API Architecture Review
 
+Dear Trupthi and Sravanthi,
 
----
+I'm reaching out to request your expertise for integrating new requirements into our existing codebase, as recently outlined by Kranthi, and detailed by Srinivas.
 
-Subject: Request for Assistance with Linux-Related Deployment Issues
+Here's a brief overview of these requirements:
 
-Hi Kranthi,
+**Requirement 1: On Page Load**
+- Each process should have individual date headers, with data organized according to the current active reporting date.
 
-I hope this message finds you well. I am reaching out to seek your assistance with some ongoing challenges we are encountering in our development process.
+**Requirement 2: On Filter Selection**
+- When a user selects a specific year, month, and version, the application should display a single date header for all processes and present data relevant to the selected criteria.
 
-As you may be aware, our team has been experiencing frequent environmental issues across our DEV, UAT, OAT, and Production stages during code deployment. These issues have not only been a significant source of frustration but have also led to conflicts within the team.
+@sraventhi ,given these enhancements, I am currently facing challenges in figuring out how to effectively integrate these new requirements into our existing codebase. This is where, I hope your expertise will be incredibly beneficial. I would like to request both of you to review our current API architecture and provide insights to me. Your detailed assessment will help us understand the feasibility, potential challenges, and necessary adjustments required to implement these changes seamlessly.
 
-One of the major concerns we're facing is the amount of time lost in troubleshooting minor Linux issues, largely due to our limited knowledge in this area. This lack of expertise is impacting our productivity and contributing to delays in our project timelines.
+Please let me know if you need any additional information or clarification regarding these requirements.
 
-In an effort to address these challenges, I previously followed the guidelines outlined on the Confluence page for setting up the DEV environment. This documentation has been shared with Sravanthi for reference. However, despite these efforts, we find ourselves in need of additional support to effectively manage and troubleshoot these environments.
+Looking forward to your valuable input and guidance on this matter.
 
-Given that DevOps and Linux are closely intertwined, I believe that Lathif could provide invaluable assistance in this regard. Our team, primarily composed of Python developers, has limited expertise in Linux, which is proving to be a hurdle in resolving these environment-related challenges.
-
-I kindly request your help in arranging some form of support, possibly leveraging Lathif's expertise in Linux. This assistance would be invaluable in helping us understand and manage our deployment environments more effectively.
-
-Thank you for considering this request. I am confident that with your support, and potentially Lathif's expertise, we can overcome these challenges and improve our team's efficiency and collaboration.
-
-Looking forward to your positive response.
-
-Best regards,
-
-[Your Name]
-
----
