@@ -1,0 +1,36 @@
+import pymssql
+
+# Database connection parameters - replace with your actual database details
+server = 'YOUR_SERVER'
+user = 'YOUR_USERNAME'
+password = 'YOUR_PASSWORD'
+database = 'YOUR_DATABASE'
+
+# Connect to the database
+conn = pymssql.connect(server, user, password, database)
+
+# Create a cursor object
+cursor = conn.cursor()
+
+# SQL query to select data from the table
+query = "SELECT [aggregation type], [reporting date] FROM YourTableName"
+
+# Execute the query
+cursor.execute(query)
+
+# Process each row
+for row in cursor:
+    aggregation_type, reporting_date = row
+
+    # Extract the necessary parts from 'aggregation type' and 'reporting date'
+    extracted_aggregation = aggregation_type  # Already in the required format (e.g., 'Y', 'Q1')
+    extracted_year = reporting_date.strftime('%y')  # Extracts the last two digits of the year
+
+    # Concatenate the strings
+    result = f"{extracted_aggregation}-{extracted_year}"
+
+    # Print the result
+    print(result)
+
+# Close the connection
+conn.close()
