@@ -1,0 +1,71 @@
+
+ Flask
+
+1. What is Flask and how is it different from Django?
+   - Answer: Flask is a micro web framework written in Python. It is lightweight and modular, making it adaptable for small-scale applications. Unlike Django, which is a full-stack web framework, Flask provides more flexibility but less out-of-the-box functionality.
+
+2. How do you handle route parameters in Flask?
+   - Answer: Route parameters in Flask are handled by adding variable parts to the route URL. These parts are marked with angular brackets and work as placeholders that are passed to the route's view function as arguments.
+
+3. Explain the use of the 'Blueprint' in Flask.
+   - Answer: Blueprints in Flask are used for organizing a Flask application into components. They help in scaling the application by structurally organizing the routes and views, making it easier to manage and extend.
+
+4. How do you manage database connections in Flask?
+   - Answer: Database connections in Flask can be managed using extensions like Flask-SQLAlchemy, which provides an ORM layer to interact with the database in an object-oriented manner, simplifying database operations.
+
+5. What is the Flask context and why is it important?
+   - Answer: Flask context includes the application and request contexts, which temporarily make certain objects globally accessible. This is important because it allows view functions and other parts of the application to access request data and application configurations seamlessly.
+
+ Pandas
+
+1. What is Pandas in Python and what are its key features?
+   - Answer: Pandas is a data manipulation and analysis library in Python. Key features include DataFrame objects for data manipulation with integrated indexing, tools for reading and writing data between in-memory data structures and different file formats, and data alignment and integrated handling of missing data.
+
+2. How do you handle missing data in Pandas?
+   - Answer: Missing data in Pandas can be handled using methods like `fillna()` to fill missing values, `dropna()` to drop rows or columns with missing values, and using interpolation methods to estimate the missing values.
+
+3. Explain the difference between a Series and a DataFrame in Pandas.
+   - Answer: A Series is a one-dimensional labeled array capable of holding any data type, while a DataFrame is a two-dimensional labeled data structure with columns of potentially different types. Essentially, a DataFrame is a collection of Series.
+
+4. How can you merge two DataFrames in Pandas?
+   - Answer: DataFrames can be merged using the `merge()` function, which performs database-style joins. Alternatively, `concat()` can be used for concatenating DataFrames along a particular axis.
+
+5. What is the purpose of groupby in Pandas?
+   - Answer: `groupby` in Pandas is used for grouping data according to the values of a particular column or several columns. It's a powerful tool for aggregating data, applying functions, and performing transformations on grouped data.
+
+ REST API
+
+1. What is a REST API and how does it work?
+   - Answer: A REST API (Representational State Transfer API) is a set of rules that allows programs to communicate with each other via HTTP requests. It works by defining endpoints and HTTP methods (GET, POST, PUT, DELETE) to perform CRUD operations.
+
+2. How do you ensure the security of a REST API?
+   - Answer: Security of a REST API can be ensured by using HTTPS for encrypted communication, implementing authentication and authorization mechanisms like OAuth, and validating and sanitizing inputs to prevent attacks like SQL injection.
+
+3. What is the difference between PUT and POST methods in a REST API?
+   - Answer: PUT is used to update an existing resource and is idempotent, meaning multiple identical requests should have the same effect as a single one. POST is used to create a new resource and is not idempotent.
+
+4. What are status codes in REST API and why are they important?
+   - Answer: Status codes are part of the HTTP response and indicate the status of the request. They are important for understanding the result of the request (e.g., success, error, redirection).
+
+5. Explain the concept of statelessness in REST API.
+   - Answer: Statelessness in REST API means that each request from a client contains all the information needed to process the request, and the server does not store any session information about the client.
+
+ MS SQL Query
+
+1. What are primary and foreign keys in MS SQL?
+   - Answer: A primary key is a column or a set of columns used to uniquely identify each row in a table. A foreign key is a column or set of columns used to establish a link between the data in two
+
+ tables.
+
+2. Explain JOIN and its types in MS SQL.
+   - Answer: JOIN is used to combine rows from two or more tables, based on a related column. The main types are INNER JOIN, LEFT JOIN, RIGHT JOIN, and FULL OUTER JOIN.
+
+3. How do you optimize SQL queries?
+   - Answer: Optimizing SQL queries involves using indexes, avoiding unnecessary columns in SELECT statements, using JOINs instead of sub-queries, and writing efficient WHERE clauses.
+
+4. What is a stored procedure in MS SQL and why use it?
+   - Answer: A stored procedure is a prepared SQL code that you can save and reuse. It's used to encapsulate repetitive tasks, improve performance, and provide security and integrity.
+
+5. What is the difference between UNION and UNION ALL?
+   - Answer: UNION combines the result sets of two or more SELECT statements and removes duplicate rows. UNION ALL also combines the results, but it includes all duplicates. 
+

@@ -1,0 +1,72 @@
+
+
+ Flask
+
+1. How do you implement error handling in Flask?
+   - Answer: Error handling in Flask can be implemented using the `errorhandler` decorator, which allows you to define custom error pages for different error codes, like 404 or 500, improving the user experience and debugging process.
+
+2. Describe how you can use Flask extensions and name a few common ones.
+   - Answer: Flask extensions are used to add additional functionality to a Flask application. They are imported and initialized within the application. Common extensions include Flask-SQLAlchemy for database operations, Flask-WTF for forms, and Flask-Login for user session management.
+
+3. Explain the concept of request and application contexts in Flask.
+   - Answer: Request context in Flask is created and destroyed every time a request is made. It contains request-specific information, like request data and user session. Application context is broader and is shared across the application, containing configuration and application-wide data.
+
+4. How do you structure a large Flask application?
+   - Answer: Large Flask applications are typically structured around the application factory pattern, where you create the Flask application as a function, and use Blueprints to organize the application into distinct components or modules.
+
+5. What are Flask-WTF and Flask-Form used for?
+   - Answer: Flask-WTF extends WTForms to integrate with Flask. It provides tools for creating forms in Flask applications, handling form submissions, and performing form validations, making it easier to work with user input in a secure and efficient way.
+
+ Pandas
+
+1. How do you perform data normalization in Pandas?
+   - Answer: Data normalization in Pandas can be done using techniques like Min-Max scaling or Z-score normalization, which can be applied to DataFrame columns to scale the data within a specific range or standardize the data distribution.
+
+2. Explain the difference between `.loc[]` and `.iloc[]` in Pandas.
+   - Answer: `.loc[]` is label-based indexing, used to access a group of rows and columns by labels or a boolean array. `.iloc[]` is integer position-based indexing, used to access a group of rows and columns by integer index positions.
+
+3. How do you handle categorical data in Pandas?
+   - Answer: Categorical data in Pandas can be handled using the `Categorical` data type. This involves converting categorical columns to this type, which makes the data more memory-efficient and enables the use of category-specific operations.
+
+4. What are multi-index DataFrames and how do you work with them?
+   - Answer: Multi-index DataFrames have multiple levels of indexing, allowing for more complex data representations. They can be manipulated using methods like `stack()`, `unstack()`, `pivot()`, and `melt()`, which allow for reshaping and transforming the DataFrame.
+
+5. Describe how you can handle time series data in Pandas.
+   - Answer: Pandas provides extensive support for time series data, including date range generation, frequency conversion, moving window statistics, date shifting, and time zone handling. This is facilitated by its `DatetimeIndex`.
+
+ REST API
+
+1. What is idempotence in REST APIs and which HTTP methods are idempotent?
+   - Answer: Idempotence in REST APIs means that making multiple identical requests has the same effect as making a single request. HTTP methods like GET, PUT, and DELETE are idempotent, while POST is not.
+
+2. Explain the concept of HATEOAS in RESTful services.
+   - Answer: HATEOAS (Hypermedia as the Engine of Application State) is a constraint of REST application architecture that keeps the client decoupled from the server. It involves including hypermedia links with the responses, allowing the client to dynamically navigate to the appropriate resources.
+
+3. How do you version a REST API and why is it important?
+   - Answer: Versioning a REST API, typically done through the URL or header, allows the API to evolve without breaking the existing clients. It's important for maintaining backward compatibility and providing a clear upgrade path for API consumers.
+
+4. What is OAuth and how is it used in REST APIs?
+   - Answer: OAuth is an open standard for access delegation commonly used as a way for Internet users to grant websites or applications access to their information on other websites without giving them the passwords. It's widely used in REST APIs for securing access.
+
+5. Explain caching mechanisms in RESTful services.
+   - Answer: Caching in RESTful services involves storing responses to requests for a certain period. This reduces the server load, improves response time, and provides better user experience. It can be implemented using HTTP
+
+ headers like `Cache-Control`.
+
+ MS SQL Query
+
+1. What are indexes in MS SQL and how do they improve query performance?
+   - Answer: Indexes in MS SQL are used to speed up the retrieval of data from a database table. They work like a book index and allow the database engine to find data faster, especially in tables with a large number of rows.
+
+2. Explain transactions in MS SQL and their properties (ACID).
+   - Answer: Transactions in MS SQL are sequences of operations performed as a single logical unit of work. They adhere to ACID properties - Atomicity, Consistency, Isolation, Durability - ensuring data integrity and handling errors gracefully.
+
+3. Describe the difference between clustered and non-clustered indexes.
+   - Answer: A clustered index sorts and stores the data rows in the table based on the index key. There can be only one clustered index per table. A non-clustered index, however, creates a separate structure to hold the index and a pointer to the location of the data, allowing for multiple non-clustered indexes per table.
+
+4. How can you prevent SQL injection in MS SQL queries?
+   - Answer: To prevent SQL injection, use parameterized queries which ensure that user input is treated as data, not as part of the SQL command, and also practice input validation and sanitization.
+
+5. What is a Common Table Expression (CTE) and how is it used?
+   - Answer: A Common Table Expression (CTE) is a temporary result set that can be referred to within a SELECT, INSERT, UPDATE, or DELETE statement. CTEs make complex queries more readable and maintainable, and they allow for recursive queries.
+
