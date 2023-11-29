@@ -1,20 +1,16 @@
-Subject: New Requirements and Request for API Architecture Review
+Subject: Assistance Needed with Final Step of SSO Integration - Review of Connection Payload and Metadata
 
-Dear Trupthi and Sravanthi,
+Dear Sraventhi,
 
-I'm reaching out to request your expertise for integrating new requirements into our existing codebase, as recently outlined by Kranthi, and detailed by Srinivas.
+I hope this email finds you well. I am writing to seek your guidance and expertise in resolving a critical issue I'm encountering with the Single Sign-On (SSO) integration in our current project.
 
-Here's a brief overview of these requirements:
+As you may be aware, I'm at the final stage of the SSO setup. However, I've hit a roadblock where the server is not accepting the connection payload sent from my code. This issue is proving to be a significant hurdle in progressing towards our project milestones.
 
-**Requirement 1: On Page Load**
-- Each process should have individual date headers, with data organized according to the current active reporting date.
+To give you a bit more context, the ADFS team recently communicated the need for metadata from our side. In response to this, my colleague Dhanunjay shared some example code from another project, which is documented on our Confluence page. This example might hold the key to resolving our current issue.
 
-**Requirement 2: On Filter Selection**
-- When a user selects a specific year, month, and version, the application should display a single date header for all processes and present data relevant to the selected criteria.
+Given your experience and understanding of these systems, I kindly request your help in reviewing my current code. Your insights would be invaluable in identifying the necessary changes or adjustments needed to ensure the server accepts our connection payload. Furthermore, I would greatly appreciate it if you could review the example code provided by Dhanunjay and advise on the correct metadata that we should submit to meet the requirements set by the ADFS team.
 
-@sraventhi ,given these enhancements, I am currently facing challenges in figuring out how to effectively integrate these new requirements into our existing codebase. This is where, I hope your expertise will be incredibly beneficial. I would like to request both of you to review our current API architecture and provide insights to me. Your detailed assessment will help us understand the feasibility, potential challenges, and necessary adjustments required to implement these changes seamlessly.
+I understand that you have a busy schedule, but considering our impending delivery deadline, your prompt support on this matter would be immensely beneficial. I am ready to provide any additional information or clarification you may need during your review.
 
-Please let me know if you need any additional information or clarification regarding these requirements.
-
-Looking forward to your valuable input and guidance on this matter.
+Thank you very much for your time and assistance. I look forward to your valuable feedback.
 
