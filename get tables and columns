@@ -1,0 +1,45 @@
+import pyodbc
+import json
+
+def get_db_schema(connection_string):
+    # Connect to the database
+    conn = pyodbc.connect(connection_string)
+    cursor = conn.cursor()
+
+    # Query to get table and column information
+    query = """
+    SELECT
+        TABLE_NAME,
+        COLUMN_NAME,
+        DATA_TYPE
+    FROM
+        INFORMATION_SCHEMA.COLUMNS
+    ORDER BY
+        TABLE_NAME, ORDINAL_POSITION
+    """
+
+    cursor.execute(query)
+
+    # Creating a dictionary to hold table and column information
+    schema = {}
+    for row in cursor.fetchall():
+        table, column, data_type = row
+        if table not in schema:
+            schema[table] = []
+        schema[table].append({"column_name": column, "data_type": data_type})
+
+    # Close the connection
+    cursor.close()
+    conn.close()
+
+    return schema
+
+# Connection string (update this with your database credentials)
+conn_string = 'DRIVER={SQL Server};SERVER=your_server;DATABASE=your_db;UID=your_username;PWD=your_password'
+
+# Get the database schema
+db_schema = get_db_schema(conn_string)
+
+# Convert the schema to JSON and print
+json_schema = json.dumps(db_schema, indent=4)
+print(json_schema)
